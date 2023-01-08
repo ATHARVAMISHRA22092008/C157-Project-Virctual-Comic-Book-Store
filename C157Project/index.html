@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Virtual Tour</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
+
+    <script src="js/Tour.js"></script>
+  </head>
+  <body>
+    <a-scene id="main-scene">
+      
+
+      <a-sky id="main-container" radius="5000" color="#000000"></a-sky>
+      <a-plane
+        id="ground"
+        src="https://images.pexels.com/photos/172276/pexels-photo-172276.jpeg?cs=srgb&dl=pexels-fwstudio-172276.jpg&fm=jpg"
+        rotation="-90 0 0"
+        position="0 -7 0"
+        height="100"
+        width="200"
+      ></a-plane>
+
+      <!-- Places Container -->
+      <a-entity id="places-container" tour></a-entity>
+
+      <!-- CAMERA -->
+      <a-camera id="camera" wasd-controls="enabled:false;">
+        <!-- App Title -->
+        <a-entity
+          id="app-title"
+          position="0 0.73 -1"
+          text="font: exo2bold; align: center; width: 2; color: #FFFFFF; value: Virtual Comic Book Store!"
+        >
+          <a-entity
+            id="app-subtitle"
+            position="0 -0.1 0"
+            text="font: dejavu; align: center; width: 1; color: #6f6f73; value: Read books from anywhere in the world"
+          ></a-entity>
+        </a-entity>
+
+        <!--Background-->
+        <a-entity> </a-entity>
+      </a-camera>
+    </a-scene>
+  </body>
+</html>
